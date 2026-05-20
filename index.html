@@ -60,9 +60,48 @@
   <body class="overflow-x-hidden">
     
     <!-- ══════════════════════════════════════════════════
+     WORLD CUP 2026 COUNTDOWN TOP BAR
+    ══════════════════════════════════════════════════ -->
+    <div class="fixed top-0 left-0 right-0 w-full z-50 h-[44px] bg-slate-900 border-b border-slate-800 text-white flex items-center justify-between px-4 select-none shadow-sm overflow-hidden font-sora">
+      <!-- Left side: Live Countdown Ticker -->
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <span class="inline-flex items-center justify-center bg-[#ee335f] text-white px-2 py-0.5 rounded text-[9px] font-extrabold tracking-wider uppercase animate-pulse">
+          WC 2026
+        </span>
+        <span id="wc-timer" class="font-bold text-[#fac912] font-mono tracking-wider text-[11px] md:text-xs">
+          00d : 00h : 00m : 00s
+        </span>
+      </div>
+      
+      <!-- Right side: Rolling Inf Marquee Ticker -->
+      <div class="marquee-container flex items-center select-none w-full border-l border-slate-800 pl-4 ml-4">
+        <div class="marquee-content text-slate-400 font-semibold tracking-wide flex items-center gap-8">
+          <span>GROUP A: 🇺🇸 USA 🇲🇽 MEX 🇨🇦 CAN 🇪🇨 ECU</span>
+          <span>GROUP B: 🏴󠁧󠁢󠁥󠁮󠁧󠁿 ENG 🇮🇷 IRN 🇺🇸 USA 🏴󠁧󠁢󠁷󠁬󠁳󠁿 WAL</span>
+          <span>GROUP C: 🇦🇷 ARG 🇸🇦 KSA 🇲🇽 MEX 🇵🇱 POL</span>
+          <span>GROUP D: 🇫🇷 FRA 🇦🇺 AUS 🇩🇰 DEN 🇹🇳 TUN</span>
+          <span>GROUP E: 🇪🇸 ESP 🇨🇷 CRC 🇩🇪 GER 🇯🇵 JPN</span>
+          <span>GROUP F: 🇧🇪 BEL 🇨🇦 CAN 🇲🇦 MAR 🇭🇷 CRO</span>
+          <span>GROUP G: 🇧🇷 BRA 🇷🇸 SRB 🇨🇭 SUI 🇨🇲 CMR</span>
+          <span>GROUP H: 🇵🇹 POR 🇬🇭 GHA 🇺🇾 URU 🇰🇷 KOR</span>
+        </div>
+        <div class="marquee-content text-slate-400 font-semibold tracking-wide flex items-center gap-8" aria-hidden="true">
+          <span>GROUP A: 🇺🇸 USA 🇲🇽 MEX 🇨🇦 CAN 🇪🇨 ECU</span>
+          <span>GROUP B: 🏴󠁧󠁢󠁥󠁮󠁧󠁿 ENG 🇮🇷 IRN 🇺🇸 USA 🏴󠁧󠁢󠁷󠁬󠁳󠁿 WAL</span>
+          <span>GROUP C: 🇦🇷 ARG 🇸🇦 KSA 🇲🇽 MEX 🇵🇱 POL</span>
+          <span>GROUP D: 🇫🇷 FRA 🇦🇺 AUS 🇩🇰 DEN 🇹🇳 TUN</span>
+          <span>GROUP E: 🇪🇸 ESP 🇨🇷 CRC 🇩🇪 GER 🇯🇵 JPN</span>
+          <span>GROUP F: 🇧🇪 BEL 🇨🇦 CAN 🇲🇦 MAR 🇭🇷 CRO</span>
+          <span>GROUP G: 🇧🇷 BRA 🇷🇸 SRB 🇨🇭 SUI 🇨🇲 CMR</span>
+          <span>GROUP H: 🇵🇹 POR 🇬🇭 GHA 🇺🇾 URU 🇰🇷 KOR</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ══════════════════════════════════════════════════
      HEADER
     ══════════════════════════════════════════════════ -->
-    <header class="fixed top-0 w-full z-50 border-b border-[#ee335f]/20 bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-sm">
+    <header class="fixed top-[44px] w-full z-50 border-b border-[#ee335f]/20 bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-sm">
       <div class="flex justify-between items-center px-4 md:px-8 py-0 w-full max-w-[1200px] mx-auto h-[80px]">
         
         <!-- Left Side: Unified Brand Logo Image -->
@@ -78,12 +117,12 @@
           </button>
           <!-- Telegram -->
           <a href="https://t.me" target="_blank" class="header-icon-btn hover:scale-105 transition-transform" aria-label="Telegram" style="background: transparent; padding: 0;">
-            <img src="logos/telegram.svg" alt="Telegram" class="w-full h-full object-contain" />
+            <img src="logos/telegram.svg" alt="Telegram" class="w-8 h-8 rounded-full shadow-sm" />
           </a>
           
           <!-- Facebook -->
           <a href="https://facebook.com" target="_blank" class="header-icon-btn hover:scale-105 transition-transform" aria-label="Facebook" style="background: transparent; padding: 0;">
-            <img src="logos/facebook.svg" alt="Facebook" class="w-full h-full object-contain" />
+            <img src="logos/facebook.svg" alt="Facebook" class="w-8 h-8 rounded-full shadow-sm" />
           </a>
         </div>
         
@@ -93,7 +132,7 @@
     <!-- ══════════════════════════════════════════════════
      MAIN
     ══════════════════════════════════════════════════ -->
-    <main class="pt-[100px] pb-6 md:pb-16 max-w-[1000px] mx-auto min-h-screen px-4">
+    <main class="pt-[144px] pb-6 md:pb-16 max-w-[1000px] mx-auto min-h-screen px-4">
       
       <!-- Green Sub Bar announcement (SEO-optimized H1 Header) -->
       <div class="mb-6">
@@ -746,6 +785,43 @@
         document.head.appendChild(script);
       }
       
+      function runWorldCupCountdown() {
+        // Kickoff date: June 11, 2026 19:00:00 (EST / UTC-5)
+        const targetDate = new Date('June 11, 2026 19:00:00 GMT-0500').getTime();
+        
+        function updateTimer() {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+          
+          if (distance < 0) {
+            const timerEl = document.getElementById('wc-timer');
+            if (timerEl) {
+              timerEl.innerText = "KICKOFF!";
+              timerEl.classList.add('text-[#ee335f]');
+            }
+            return;
+          }
+          
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+          const daysStr = String(days).padStart(2, '0');
+          const hoursStr = String(hours).padStart(2, '0');
+          const minsStr = String(minutes).padStart(2, '0');
+          const secsStr = String(seconds).padStart(2, '0');
+          
+          const timerEl = document.getElementById('wc-timer');
+          if (timerEl) {
+            timerEl.innerHTML = `${daysStr}D <span class="text-slate-500">:</span> ${hoursStr}H <span class="text-slate-500">:</span> ${minsStr}M <span class="text-slate-500">:</span> ${secsStr}S`;
+          }
+        }
+        
+        updateTimer();
+        setInterval(updateTimer, 1000);
+      }
+
       function updateHeaderDate() {
         const today = new Date();
         const options = { month: 'short', day: 'numeric', year: 'numeric' };
@@ -761,6 +837,7 @@
         runProgrammaticSEO();
         injectSiteNavigationSchema();
         updateHeaderDate();
+        runWorldCupCountdown();
       });
 
       function scaleAd() {

@@ -189,3 +189,32 @@ nav a { justify-content: center; }
 @media (max-width: 767px) {
   body { padding-bottom: 16px; }
 }
+
+/* ── WORLD CUP TICKER MARQUEE ── */
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  animation: marquee-roll 45s linear infinite;
+  gap: 32px;
+  padding-left: 16px;
+}
+.marquee-content span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+@keyframes marquee-roll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
