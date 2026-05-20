@@ -145,6 +145,15 @@ nav a { justify-content: center; }
   box-sizing: border-box;
 }
 
+/* Ad slots must stay fully hidden when SITE_CONFIG.adsEnabled is false.
+   The Tailwind responsive `flex` / `min-[1360px]:flex` classes have the
+   same specificity as the user-agent `[hidden]` rule and would otherwise
+   override it. This rule ensures the placeholder boxes never render
+   until the activation script removes the `hidden` attribute. */
+[data-ad-slot][hidden] {
+  display: none !important;
+}
+
 .match-info-badge {
   background-color: rgba(238, 51, 95, 0.12);
   color: #ee335f;
