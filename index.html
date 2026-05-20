@@ -57,10 +57,10 @@
     <!-- External Match Data File -->
     <script src="matches.js"></script>
   </head>
-  <body class="overflow-x-hidden">
+  <body class="overflow-x-hidden relative">
     
     <!-- Left Sidebar Skyscraper Ads (Visible next to main content on desktops) -->
-    <div class="hidden min-[1360px]:flex fixed left-4 top-[180px] z-40 gap-3 items-start select-none">
+    <div class="hidden min-[1360px]:flex absolute left-4 top-[180px] z-40 gap-3 items-start select-none">
       <!-- Left Skyscraper 1 (Always visible on desktop viewports >= 1360px) -->
       <div class="w-[160px] h-[600px] bg-slate-100 dark:bg-slate-800/20 rounded-xl overflow-hidden shadow-inner flex items-center justify-center relative">
         <span class="absolute top-1 left-2 text-[9px] font-bold text-slate-400/50 uppercase tracking-widest pointer-events-none">Advertisement</span>
@@ -93,7 +93,7 @@
     </div>
 
     <!-- Right Sidebar Skyscraper Ads (Visible next to main content on desktops) -->
-    <div class="hidden min-[1360px]:flex fixed right-4 top-[180px] z-40 gap-3 items-start select-none">
+    <div class="hidden min-[1360px]:flex absolute right-4 top-[180px] z-40 gap-3 items-start select-none">
       <!-- Right Skyscraper 2 (Only visible side-by-side on ultra-wide screens >= 1700px Closer to the content) -->
       <div class="hidden min-[1700px]:flex w-[160px] h-[600px] bg-slate-100 dark:bg-slate-800/20 rounded-xl overflow-hidden shadow-inner items-center justify-center relative">
         <span class="absolute top-1 left-2 text-[9px] font-bold text-slate-400/50 uppercase tracking-widest pointer-events-none">Advertisement</span>
