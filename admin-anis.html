@@ -119,6 +119,21 @@
           </div>
         </details>
 
+        <!-- Site Settings -->
+        <div class="bg-surface border border-slate-700/50 rounded-2xl p-5">
+          <h2 class="text-sm font-extrabold uppercase tracking-widest text-slate-300 mb-4">Site Settings</h2>
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex-1">
+              <div class="text-sm font-bold text-slate-100">Ads on home page</div>
+              <p class="text-[11px] text-slate-500 mt-0.5">Toggles all ad slots (gutter skyscrapers + bottom banner). Click Publish to apply.</p>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+              <input id="ads-enabled" type="checkbox" class="sr-only peer" />
+              <div class="w-12 h-7 bg-slate-700 rounded-full peer-checked:bg-primary transition-colors peer-focus:ring-2 peer-focus:ring-primary/40 after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-transform peer-checked:after:translate-x-5"></div>
+            </label>
+          </div>
+        </div>
+
         <!-- Match Editor -->
         <div class="flex items-center justify-between">
           <h2 class="text-sm font-extrabold uppercase tracking-widest text-slate-300">Matches</h2>
@@ -475,6 +490,10 @@
       let baseSha = null;
       let dirty = false;
 
+      let siteConfig = { adsEnabled: false };
+      let siteConfigSha = null;
+      let siteConfigDirty = false;
+
       const $ = (sel) => document.querySelector(sel);
       const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
@@ -560,17 +579,57 @@
       $('#btn-test-connection').addEventListener('click', testConnection);
 
       /* ── Dirty state ────────────────────────────────────────────── */
+      function refreshDirtyIndicator() {
+        $('#dirty-indicator').classList.toggle('hidden', !(dirty || siteConfigDirty));
+      }
       function setDirty(v) {
         dirty = v;
-        $('#dirty-indicator').classList.toggle('hidden', !v);
+        refreshDirtyIndicator();
         if (v) localStorage.setItem(STORAGE.draft, JSON.stringify(matches));
         else localStorage.removeItem(STORAGE.draft);
       }
+      function setSiteConfigDirty(v) {
+        siteConfigDirty = v;
+        refreshDirtyIndicator();
+      }
       window.addEventListener('beforeunload', (e) => {
-        if (dirty) {
+        if (dirty || siteConfigDirty) {
           e.preventDefault();
           e.returnValue = '';
         }
+      });
+
+      /* ── Site Config (ads toggle) ───────────────────────────────── */
+      function parseSiteConfig(text) {
+        const m = text.match(/window\.SITE_CONFIG\s*=\s*(\{[\s\S]*?\})\s*;?\s*$/m);
+        if (!m) return { adsEnabled: false };
+        // eslint-disable-next-line no-new-func
+        return new Function('return ' + m[1])();
+      }
+      function serializeSiteConfig(cfg) {
+        return `window.SITE_CONFIG = ${JSON.stringify(cfg, null, 2)};\n`;
+      }
+      function applySiteConfigToUI() {
+        $('#ads-enabled').checked = !!siteConfig.adsEnabled;
+      }
+      async function fetchSiteConfigFromGitHub() {
+        const cfg = readSettings();
+        if (!cfg.owner || !cfg.repo) throw new Error('Owner/repo required');
+        const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/site-config.js?ref=${encodeURIComponent(cfg.branch)}`;
+        const res = await fetch(url, { headers: ghHeaders(cfg), cache: 'no-store' });
+        if (res.status === 404) {
+          siteConfigSha = null;
+          return { adsEnabled: false };
+        }
+        if (!res.ok) throw new Error(`GitHub fetch failed: ${res.status}`);
+        const data = await res.json();
+        siteConfigSha = data.sha;
+        const content = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
+        return parseSiteConfig(content);
+      }
+      $('#ads-enabled').addEventListener('change', (e) => {
+        siteConfig.adsEnabled = e.target.checked;
+        setSiteConfigDirty(true);
       });
 
       /* ── Datalist helpers ───────────────────────────────────────── */
@@ -742,41 +801,71 @@
         return data.sha;
       }
 
+      async function publishFile(cfg, path, content, message, currentSha) {
+        // Fetch latest SHA right before writing to avoid stale-SHA collisions.
+        const headUrl = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}?ref=${encodeURIComponent(cfg.branch)}`;
+        const headRes = await fetch(headUrl, { headers: ghHeaders(cfg), cache: 'no-store' });
+        let sha = null;
+        if (headRes.ok) {
+          sha = (await headRes.json()).sha;
+        } else if (headRes.status !== 404) {
+          throw new Error(`Could not read current ${path}: ${headRes.status}`);
+        }
+        const body = {
+          message,
+          content: btoa(unescape(encodeURIComponent(content))),
+          branch: cfg.branch
+        };
+        if (sha) body.sha = sha;
+        const writeUrl = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
+        const res = await fetch(writeUrl, {
+          method: 'PUT',
+          headers: { ...ghHeaders(cfg), 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.message || `${res.status} ${res.statusText}`);
+        }
+        const data = await res.json();
+        return data.content.sha;
+      }
+
       async function publishToGitHub() {
         const cfg = saveSettings();
         if (!cfg.token) {
           toast('Add a GitHub token first', 'warn');
           return;
         }
-        if (!validateMatches()) return;
+        if (dirty && !validateMatches()) return;
+        if (!dirty && !siteConfigDirty) {
+          toast('Nothing to publish', 'warn');
+          return;
+        }
 
         $('#btn-publish').disabled = true;
         $('#btn-publish').classList.add('opacity-60');
         try {
-          // Always grab the latest SHA right before writing, so we never
-          // collide with changes made outside this admin session.
-          baseSha = await fetchLatestSha(cfg);
-
-          const content = serializeMatchesJs(matches);
-          const body = {
-            message: `chore(matches): admin update (${matches.length} matches)`,
-            content: btoa(unescape(encodeURIComponent(content))),
-            branch: cfg.branch,
-            sha: baseSha
-          };
-          const res = await fetch(ghContentsUrl(cfg), {
-            method: 'PUT',
-            headers: { ...ghHeaders(cfg), 'Content-Type': 'application/json' },
-            body: JSON.stringify(body)
-          });
-          if (!res.ok) {
-            const err = await res.json().catch(() => ({}));
-            throw new Error(err.message || `${res.status} ${res.statusText}`);
+          const published = [];
+          if (dirty) {
+            baseSha = await publishFile(
+              cfg, 'matches.js',
+              serializeMatchesJs(matches),
+              `chore(matches): admin update (${matches.length} matches)`
+            );
+            setDirty(false);
+            published.push('matches');
           }
-          const data = await res.json();
-          baseSha = data.content.sha;
-          setDirty(false);
-          toast('Published to GitHub');
+          if (siteConfigDirty) {
+            siteConfigSha = await publishFile(
+              cfg, 'site-config.js',
+              serializeSiteConfig(siteConfig),
+              `chore(config): ads ${siteConfig.adsEnabled ? 'enabled' : 'disabled'}`
+            );
+            setSiteConfigDirty(false);
+            published.push('site config');
+          }
+          toast('Published: ' + published.join(' + '));
         } catch (e) {
           console.error(e);
           toast('Publish failed: ' + e.message, 'err');
@@ -803,11 +892,15 @@
       }
 
       $('#btn-reload').addEventListener('click', async () => {
-        if (dirty && !confirm('Discard unsaved changes and reload from GitHub?')) return;
+        if ((dirty || siteConfigDirty) && !confirm('Discard unsaved changes and reload from GitHub?')) return;
         try {
-          matches = await fetchMatchesFromGitHub();
+          const [m, sc] = await Promise.all([fetchMatchesFromGitHub(), fetchSiteConfigFromGitHub()]);
+          matches = m;
+          siteConfig = sc;
           setDirty(false);
+          setSiteConfigDirty(false);
           renderMatches();
+          applySiteConfigToUI();
           toast('Reloaded from GitHub');
         } catch (e) {
           toast(e.message, 'err');
@@ -877,6 +970,19 @@
       async function boot() {
         loadSettings();
         initGlobalDatalists();
+
+        // Site config: try GitHub, fall back to local file.
+        try {
+          siteConfig = await fetchSiteConfigFromGitHub();
+        } catch (_) {
+          try {
+            const r = await fetch('site-config.js', { cache: 'no-store' });
+            if (r.ok) siteConfig = parseSiteConfig(await r.text());
+          } catch (_) { /* keep default */ }
+        }
+        applySiteConfigToUI();
+
+        // Matches: prefer in-browser draft, else GitHub, else local file.
         const draft = localStorage.getItem(STORAGE.draft);
         if (draft) {
           try {
@@ -884,7 +990,6 @@
             setDirty(true);
             renderMatches();
             toast('Restored unsaved draft', 'warn');
-            // Still try to fetch baseSha in the background so publish works.
             fetchMatchesFromGitHub().catch(() => {});
             return;
           } catch (_) {
@@ -895,7 +1000,6 @@
           matches = await fetchMatchesFromGitHub();
           renderMatches();
         } catch (e) {
-          // Fall back to local matches.js (page is served alongside it).
           try {
             const res = await fetch('matches.js', { cache: 'no-store' });
             const text = await res.text();

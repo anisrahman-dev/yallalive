@@ -56,16 +56,19 @@
     
     <!-- External Match Data File -->
     <script src="matches.js"></script>
+
+    <!-- Site Config (controls ads on/off, edited via /admin-anis.html) -->
+    <script src="site-config.js"></script>
   </head>
   <body class="overflow-x-hidden relative">
     
-    <!-- 🚫 TEMPORARILY DISABLED: Gutter Skyscraper Ads (Left & Right Sides)
-    [Left Sidebar Skyscraper Ads (Visible next to main content on desktops)]
-    <div class="hidden min-[1360px]:flex absolute left-4 top-[180px] z-40 gap-3 items-start select-none">
-      [Left Skyscraper 1 (Always visible on desktop viewports >= 1360px)]
+    <!-- Gutter Skyscraper Ads — activated by site-config.js (SITE_CONFIG.adsEnabled) -->
+    <!-- Left Sidebar Skyscraper Ads (Visible next to main content on desktops) -->
+    <div data-ad-slot hidden class="min-[1360px]:flex absolute left-4 top-[180px] z-40 gap-3 items-start select-none">
+      <!-- Left Skyscraper 1 (Always visible on desktop viewports >= 1360px) -->
       <div class="w-[160px] h-[600px] bg-slate-100 dark:bg-slate-800/20 rounded-xl overflow-hidden shadow-inner flex items-center justify-center relative">
         <span class="absolute top-1 left-2 text-[9px] font-bold text-slate-400/50 uppercase tracking-widest pointer-events-none">Advertisement</span>
-        <script type="text/plain">
+        <script type="text/plain" data-ad-script>
           atOptions = {
             'key' : 'ec2e4b0a2aa3fcac5cb428225d0ad9a1',
             'format' : 'iframe',
@@ -74,13 +77,13 @@
             'params' : {}
           };
         </script>
-        <script type="text/plain" src="https://www.highperformanceformat.com/ec2e4b0a2aa3fcac5cb428225d0ad9a1/invoke.js"></script>
+        <script type="text/plain" data-ad-script src="https://www.highperformanceformat.com/ec2e4b0a2aa3fcac5cb428225d0ad9a1/invoke.js"></script>
       </div>
-      
-      [Left Skyscraper 2 (Only visible side-by-side on ultra-wide screens >= 1700px)]
+
+      <!-- Left Skyscraper 2 (Only visible side-by-side on ultra-wide screens >= 1700px) -->
       <div class="hidden min-[1700px]:flex w-[160px] h-[600px] bg-slate-100 dark:bg-slate-800/20 rounded-xl overflow-hidden shadow-inner items-center justify-center relative">
         <span class="absolute top-1 left-2 text-[9px] font-bold text-slate-400/50 uppercase tracking-widest pointer-events-none">Advertisement</span>
-        <script type="text/plain">
+        <script type="text/plain" data-ad-script>
           atOptions = {
             'key' : 'ec2e4b0a2aa3fcac5cb428225d0ad9a1',
             'format' : 'iframe',
@@ -89,16 +92,16 @@
             'params' : {}
           };
         </script>
-        <script type="text/plain" src="https://www.highperformanceformat.com/ec2e4b0a2aa3fcac5cb428225d0ad9a1/invoke.js"></script>
+        <script type="text/plain" data-ad-script src="https://www.highperformanceformat.com/ec2e4b0a2aa3fcac5cb428225d0ad9a1/invoke.js"></script>
       </div>
     </div>
 
-    [Right Sidebar Skyscraper Ads (Visible next to main content on desktops)]
-    <div class="hidden min-[1360px]:flex absolute right-4 top-[180px] z-40 gap-3 items-start select-none">
-      [Right Skyscraper 2 (Only visible side-by-side on ultra-wide screens >= 1700px Closer to the content)]
+    <!-- Right Sidebar Skyscraper Ads (Visible next to main content on desktops) -->
+    <div data-ad-slot hidden class="min-[1360px]:flex absolute right-4 top-[180px] z-40 gap-3 items-start select-none">
+      <!-- Right Skyscraper 2 (Only visible side-by-side on ultra-wide screens >= 1700px) -->
       <div class="hidden min-[1700px]:flex w-[160px] h-[600px] bg-slate-100 dark:bg-slate-800/20 rounded-xl overflow-hidden shadow-inner items-center justify-center relative">
         <span class="absolute top-1 left-2 text-[9px] font-bold text-slate-400/50 uppercase tracking-widest pointer-events-none">Advertisement</span>
-        <script type="text/plain">
+        <script type="text/plain" data-ad-script>
           atOptions = {
             'key' : 'ec2e4b0a2aa3fcac5cb428225d0ad9a1',
             'format' : 'iframe',
@@ -107,13 +110,13 @@
             'params' : {}
           };
         </script>
-        <script type="text/plain" src="https://www.highperformanceformat.com/ec2e4b0a2aa3fcac5cb428225d0ad9a1/invoke.js"></script>
+        <script type="text/plain" data-ad-script src="https://www.highperformanceformat.com/ec2e4b0a2aa3fcac5cb428225d0ad9a1/invoke.js"></script>
       </div>
 
-      [Right Skyscraper 1 (Always visible on desktop viewports >= 1360px)]
+      <!-- Right Skyscraper 1 (Always visible on desktop viewports >= 1360px) -->
       <div class="w-[160px] h-[600px] bg-slate-100 dark:bg-slate-800/20 rounded-xl overflow-hidden shadow-inner flex items-center justify-center relative">
         <span class="absolute top-1 left-2 text-[9px] font-bold text-slate-400/50 uppercase tracking-widest pointer-events-none">Advertisement</span>
-        <script type="text/plain">
+        <script type="text/plain" data-ad-script>
           atOptions = {
             'key' : 'ec2e4b0a2aa3fcac5cb428225d0ad9a1',
             'format' : 'iframe',
@@ -122,10 +125,9 @@
             'params' : {}
           };
         </script>
-        <script type="text/plain" src="https://www.highperformanceformat.com/ec2e4b0a2aa3fcac5cb428225d0ad9a1/invoke.js"></script>
+        <script type="text/plain" data-ad-script src="https://www.highperformanceformat.com/ec2e4b0a2aa3fcac5cb428225d0ad9a1/invoke.js"></script>
       </div>
     </div>
-    -->
 
     <!-- ══════════════════════════════════════════════════
      WORLD CUP 2026 COUNTDOWN TOP BAR
@@ -227,14 +229,13 @@
           <!-- Match Cards will be dynamically injected here from matches.js -->
         </div>
 
-        <!-- 🚫 TEMPORARILY DISABLED: Bottom Match Section Ad Banner (Visible on Both Mobile & Web View)
-        <div class="w-full flex justify-center py-6 mt-6 border-t border-gray-100 dark:border-slate-800/40">
+        <!-- Bottom Match Section Ad Banner — activated by site-config.js (SITE_CONFIG.adsEnabled) -->
+        <div data-ad-slot hidden class="w-full justify-center py-6 mt-6 border-t border-gray-100 dark:border-slate-800/40 flex">
           <div class="flex flex-col items-center justify-center w-full">
-            <script type="text/plain" async="async" data-cfasync="false" src="https://pl29500312.effectivecpmnetwork.com/53ad722048fcb45c6570dc61ee07464f/invoke.js"></script>
+            <script type="text/plain" data-ad-script async="async" data-cfasync="false" src="https://pl29500312.effectivecpmnetwork.com/53ad722048fcb45c6570dc61ee07464f/invoke.js"></script>
             <div id="container-53ad722048fcb45c6570dc61ee07464f" class="w-full max-w-full flex justify-center"></div>
           </div>
         </div>
-        -->
 
       </div><!-- /main-wrapper -->
     </main>
@@ -995,5 +996,26 @@
         
       </div>
     </div>
+
+    <!-- Ads activation: only runs if site-config.js sets SITE_CONFIG.adsEnabled = true.
+         Cloning each script with type=text/javascript causes the browser to execute it. -->
+    <script>
+      (function () {
+        if (!window.SITE_CONFIG || !window.SITE_CONFIG.adsEnabled) return;
+        document.querySelectorAll('[data-ad-slot]').forEach(function (slot) {
+          slot.hidden = false;
+          slot.querySelectorAll('script[data-ad-script]').forEach(function (oldScript) {
+            var newScript = document.createElement('script');
+            Array.prototype.forEach.call(oldScript.attributes, function (attr) {
+              if (attr.name === 'type' || attr.name === 'data-ad-script') return;
+              newScript.setAttribute(attr.name, attr.value);
+            });
+            newScript.type = 'text/javascript';
+            if (!oldScript.src) newScript.text = oldScript.textContent;
+            oldScript.parentNode.replaceChild(newScript, oldScript);
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
