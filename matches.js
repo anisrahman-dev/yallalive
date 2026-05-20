@@ -2,7 +2,7 @@ const MATCHES_DATA = [
   {
     id: 1,
     league: "Italy, Serie A",
-    time: "",
+    time: "2:15 AM",
     status: "",
     day: "today",
     isImportant: true,
