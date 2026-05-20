@@ -22,7 +22,7 @@ const MATCHES_DATA = [
     time: "3:00 AM",
     status: "",
     day: "today",
-    isImportant: false,
+    isImportant: true,
     link: "https://t.me",
     homeTeam: {
       name: "Turkey",
