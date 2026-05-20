@@ -15,5 +15,22 @@ const MATCHES_DATA = [
       name: "Everton",
       logo: "logos/cameroon.svg"
     }
+  },
+  {
+    id: 2,
+    league: "FIFA World Cup 2026",
+    time: "3:00 AM",
+    status: "",
+    day: "today",
+    isImportant: false,
+    link: "https://t.me",
+    homeTeam: {
+      name: "Turkey",
+      logo: "logos/bournemouth.svg"
+    },
+    awayTeam: {
+      name: "Argentina",
+      logo: "logos/cameroon.svg"
+    }
   }
 ];
