@@ -209,10 +209,22 @@ nav a { justify-content: center; }
 .marquee-content span {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 10px;
-  font-weight: 700;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
   letter-spacing: 0.05em;
+}
+@media (min-width: 768px) {
+  .marquee-content span {
+    font-size: 16px;
+    gap: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .marquee-content span {
+    font-size: 18px;
+    gap: 12px;
+  }
 }
 @keyframes marquee-roll {
   0% { transform: translateX(0); }
