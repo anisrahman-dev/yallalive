@@ -12,4 +12,16 @@
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
+  <url>
+    <loc>https://voltstream.com/blog/index.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://voltstream.com/blog/world-cup-2026-kickoff-date.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>
