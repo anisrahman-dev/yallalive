@@ -1237,25 +1237,6 @@
           `;
           seoSection.insertAdjacentHTML('afterbegin', bannerHtml);
         }
-
-        // 6. Programmatically build FAQ JSON-LD Schema matching today's active matches
-        const faqEntities = todayMatches.slice(0, 3).map((m) => ({
-          '@type': 'Question',
-          name: `How to watch ${m.homeTeam.name} vs ${m.awayTeam.name} live stream free?`,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: `You can watch ${m.homeTeam.name} vs ${m.awayTeam.name} live stream for free on Yalla Live. Simply scroll up to today's matches, find the card for ${m.homeTeam.name} vs ${m.awayTeam.name}, and click to start streaming instantly.`,
-          },
-        }));
-
-        const faqSchemaScript = document.createElement('script');
-        faqSchemaScript.type = 'application/ld+json';
-        faqSchemaScript.text = JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: faqEntities,
-        });
-        document.head.appendChild(faqSchemaScript);
       }
 
       // ══════════════════════════════════════════════════
