@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /admin-anis.html
 
-Sitemap: https://voltstream.com/sitemap.xml
+Sitemap: https://yallalivefootball.com/sitemap.xml
