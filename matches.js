@@ -6,7 +6,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://t.me"],
+    servers: ["https://t.me","#","#"],
     homeTeam: {
       name: "Brazil",
       logo: "logos/brazil.png"
