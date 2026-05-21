@@ -3,5 +3,5 @@ window.SITE_CONFIG = {
   "vignetteEnabled": false,
   "multiAdEnabled": false,
   "popUnderEnabled": false,
-  "countdownSeconds": 3
+  "countdownSeconds": 5
 };
