@@ -12,9 +12,9 @@ The toggle controls every ad slot at once (left + right skyscrapers + bottom mat
 ## How it works under the hood
 
 - `site-config.js` exposes `window.SITE_CONFIG.adsEnabled` (a boolean)
-- `home.html` loads it in the `<head>`
+- `index.html` loads it in the `<head>`
 - Each ad block sits in the page wrapped in `<div data-ad-slot hidden>` with its scripts set to `type="text/plain" data-ad-script`. By default they're inert.
-- A small bootstrap at the end of `home.html` checks `SITE_CONFIG.adsEnabled` and, if true, removes the `hidden` attribute and clones each ad script with `type="text/javascript"` so the browser executes it.
+- A small bootstrap at the end of `index.html` checks `SITE_CONFIG.adsEnabled` and, if true, removes the `hidden` attribute and clones each ad script with `type="text/javascript"` so the browser executes it.
 
 ## Ad networks in use
 
@@ -35,6 +35,6 @@ Commit + push to `main`, your hosting will redeploy.
 
 ## Adding a new ad slot
 
-1. Add the markup inside `home.html`, wrapped in `<div data-ad-slot hidden>…</div>`
+1. Add the markup inside `index.html`, wrapped in `<div data-ad-slot hidden>…</div>`
 2. Inside that wrapper, mark every ad-network `<script>` as `type="text/plain" data-ad-script`
 3. That's it — the existing bootstrap will pick it up automatically when ads are enabled
