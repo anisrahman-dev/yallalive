@@ -6,7 +6,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["#","#"],
+    servers: ["https://www.livelist.live/matches/%d8%a8%d8%b1%d8%a7%d9%8a%d8%aa%d9%88%d9%86-%d9%88-%d9%85%d8%a7%d9%86%d8%b4%d8%b3%d8%aa%d8%b1-%d9%8a%d9%88%d9%86%d8%a7%d9%8a%d8%aa%d8%af/"],
     homeTeam: {
       name: "Manchester United",
       logo: "logos/man-united.png"
@@ -23,7 +23,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://t.me"],
+    servers: ["https://www.livelist.live/matches/%d9%83%d8%b1%d9%8a%d8%b3%d8%aa%d8%a7%d9%84-%d8%a8%d8%a7%d9%84%d8%a7%d8%b3-%d9%88-%d8%a3%d8%b1%d8%b3%d9%86%d8%a7%d9%84/"],
     homeTeam: {
       name: "Crystal Palace",
       logo: "logos/crystal-palace.png"
@@ -40,7 +40,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://t.me"],
+    servers: ["https://www.livelist.live/matches/%d9%81%d9%88%d9%84%d9%87%d8%a7%d9%85-%d9%88-%d9%86%d9%8a%d9%88%d9%83%d8%a7%d8%b3%d9%84-%d9%8a%d9%88%d9%86%d8%a7%d9%8a%d8%aa%d8%af/"],
     homeTeam: {
       name: "Fulham",
       logo: "logos/fulham.png"
@@ -57,7 +57,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://t.me"],
+    servers: ["https://www.livelist.live/matches/%d9%84%d9%8a%d9%81%d8%b1%d8%a8%d9%88%d9%84-%d9%88-%d8%a8%d8%b1%d9%8a%d9%86%d8%aa%d9%81%d9%88%d8%b1%d8%af/"],
     homeTeam: {
       name: "Liverpool",
       logo: "logos/liverpool.png"
@@ -74,7 +74,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://t.me"],
+    servers: ["https://www.livelist.live/matches/%d9%85%d8%a7%d9%86%d8%b4%d8%b3%d8%aa%d8%b1-%d8%b3%d9%8a%d8%aa%d9%8a-%d9%88-%d8%a3%d8%b3%d8%aa%d9%88%d9%86-%d9%81%d9%8a%d9%84%d8%a7/"],
     homeTeam: {
       name: "Manchester City",
       logo: "logos/man-city.png"
@@ -91,7 +91,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://t.me"],
+    servers: ["https://www.livelist.live/matches/%d8%aa%d9%88%d8%aa%d9%86%d9%87%d8%a7%d9%85-%d9%87%d9%88%d8%aa%d8%b3%d8%a8%d8%b1-%d9%88-%d8%a5%d9%8a%d9%81%d8%b1%d8%aa%d9%88%d9%86/"],
     homeTeam: {
       name: "Tottenham Hotspur",
       logo: "logos/tottenham.png"
