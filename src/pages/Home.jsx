@@ -217,28 +217,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 px-4 md:px-16 bg-[#f8fafc] dark:bg-[#0f172a] border-t border-gray-200 dark:border-gray-800">
-        <div className="max-w-[1000px] mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-slate-100 mb-2 tracking-tight">Football Guides &amp; Resources</h2>
-          <p className="text-gray-600 dark:text-slate-400 leading-relaxed text-sm md:text-base mb-8">
-            Deep-dive guides on watching every major league and tournament — schedules, free streaming options, mobile apps, and country-by-country broadcaster lists. Updated for the 2025-26 season.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <GuideCard to="/world-cup-2026.html" tag="Tournament" title="World Cup 2026 | Match schedule, fixtures & stadiums" desc="Complete guide to the 48-team FIFA World Cup in the USA, Canada, and Mexico — host cities, schedule, contenders, and broadcasters." />
-            <GuideCard to="/champions-league-final-2026.html" tag="Final" title="Watch UCL FINAL 2026 Live Streaming Online Match" desc="Everything for the 30 May 2026 Champions League Final at Puskás Aréna, Budapest — broadcasters, kick-off time, top contenders." />
-            <GuideCard to="/how-to-watch-premier-league-free.html" tag="Free Guide" title="How to Watch Premier League Live Free Online" desc="Country-by-country free-to-air options, free-trial hacks, and the cheapest legal way to watch every EPL match." />
-            <GuideCard to="/how-to-watch-champions-league-free.html" tag="Free Guide" title="How to Watch Champions League Live Free" desc="Free UCL coverage by country — ZDF, TV8, SBT, RTÉ Player, plus the best free-trial timing." />
-            <GuideCard to="/how-to-watch-football-mobile.html" tag="How-To" title="How to Watch Football on Mobile — Best Apps & Methods" desc="The 10 best mobile football apps, browser tips, AirPlay/Chromecast guide, and data-saving tricks." />
-            <GuideCard to="/best-free-football-streaming-sites.html" tag="Compared" title="Best Free Football Streaming Sites in 2026" desc="Honest comparison of legitimate broadcaster streams, aggregators, and what each one is best for." />
-            <GuideCard to="/how-to-watch-football-mena.html" tag="Region" title="How to Watch Football in MENA" desc="beIN Sports, TOD, SSC, Shahid — country-by-country guide for Saudi Arabia, UAE, Egypt, Morocco, and the wider Arab world." />
-            <GuideCard to="/watch-live-football.html" tag="Overview" title="Watch Live Football on Yalla Live" desc="Every major league and tournament we cover — Premier League, La Liga, Serie A, Bundesliga, Ligue 1, UCL, AFCON, and more." />
-            <GuideCard to="/fifa-world-cup-history.html" tag="History" title="FIFA World Cup History | Every Winner, Final & Record" desc="Complete World Cup history from Uruguay 1930 to Argentina 2022. Every champion, host city, iconic final, and unbreakable record." />
-            <GuideCard to="/world-cup-format-explained.html" tag="Explainer" title="How the World Cup Works | Format & Qualification" desc="The new 48-team format, group stages, the Round of 32, qualification by confederation, tiebreakers, and squad rules in plain English." />
-            <GuideCard to="/world-cup-top-scorers-all-time.html" tag="Records" title="Top World Cup Goalscorers of All Time" desc="Klose, Ronaldo, Müller, Pelé, Messi, Mbappé. The complete all-time goalscoring leaderboard and every Golden Boot winner." />
-          </div>
-        </div>
-      </section>
-
       <section className="py-12 md:py-16 px-4 md:px-16 bg-white dark:bg-[#0b1325] border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-[1000px] mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-slate-100 mb-3 tracking-tight">Watch Football Live Online — Every League, Every Device</h2>
@@ -295,12 +273,3 @@ function FaqItem({ q, children }) {
   )
 }
 
-function GuideCard({ to, tag, title, desc }) {
-  return (
-    <Link to={to} className="block bg-white dark:bg-slate-900/50 border border-gray-200 dark:border-slate-800 rounded-2xl p-5 hover:border-[#ee335f] dark:hover:border-[#ee335f] hover:shadow-lg transition-all">
-      <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-[#ee335f] mb-2">{tag}</span>
-      <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1">{title}</h3>
-      <p className="text-xs md:text-sm text-gray-500 dark:text-slate-400 leading-relaxed">{desc}</p>
-    </Link>
-  )
-}
