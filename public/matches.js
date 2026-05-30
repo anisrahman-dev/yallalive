@@ -6,7 +6,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://t.me"],
+    servers: ["https://yallalive.sx/matches/psg-vs-arsenal/"],
     homeTeam: {
       name: "Paris Saint-Germain",
       logo: "logos/psg.png"
