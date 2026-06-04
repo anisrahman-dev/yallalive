@@ -5,6 +5,7 @@ import Admin from './pages/Admin.jsx'
 import Contact from './pages/Contact.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Terms from './pages/Terms.jsx'
+import WorldCupFormatExplained from './pages/articles/WorldCupFormatExplained.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -36,6 +37,8 @@ export default function App() {
         <Route path="/contact.html" element={<Contact />} />
         <Route path="/privacy.html" element={<Privacy />} />
         <Route path="/terms.html" element={<Terms />} />
+
+        <Route path="/world-cup-format-explained.html" element={<WorldCupFormatExplained />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
