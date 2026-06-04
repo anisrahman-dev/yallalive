@@ -11,6 +11,7 @@ import WorldCup2026 from './pages/articles/WorldCup2026.jsx'
 import FifaWorldCupHistory from './pages/articles/FifaWorldCupHistory.jsx'
 import WorldCupTopScorers from './pages/articles/WorldCupTopScorers.jsx'
 import HowToWatchFootballMena from './pages/articles/HowToWatchFootballMena.jsx'
+import HowToWatchPremierLeagueFree from './pages/articles/HowToWatchPremierLeagueFree.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -50,6 +51,7 @@ export default function App() {
         <Route path="/fifa-world-cup-history.html" element={<FifaWorldCupHistory />} />
         <Route path="/world-cup-top-scorers-all-time.html" element={<WorldCupTopScorers />} />
         <Route path="/how-to-watch-football-mena.html" element={<HowToWatchFootballMena />} />
+        <Route path="/how-to-watch-premier-league-free.html" element={<HowToWatchPremierLeagueFree />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

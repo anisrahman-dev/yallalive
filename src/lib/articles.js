@@ -32,4 +32,10 @@ export const ARTICLES = [
     excerpt: 'Country-by-country guide to watching live football across the Arab world — beIN Sports plus free alternatives like TOD, SSC, and Shahid.',
     category: 'Streaming Guide',
   },
+  {
+    slug: '/how-to-watch-premier-league-free.html',
+    title: 'How to Watch Premier League Live Free Online',
+    excerpt: 'Free and legal ways to stream the English Premier League online — broadcasters by country, free-trial tips, and how to catch every matchday.',
+    category: 'Streaming Guide',
+  },
 ]
