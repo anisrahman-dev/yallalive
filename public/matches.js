@@ -1,19 +1,36 @@
 const MATCHES_DATA = [
   {
     id: 1,
-    league: "UEFA Champions League",
-    time: "10:00 PM",
+    league: "International Friendly",
+    time: "1:00 AM",
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://www.z-x.site/2026/05/psg-vs-arsenal.html?m=1"],
+    servers: ["https://yallalive.sx/"],
     homeTeam: {
-      name: "Paris Saint-Germain",
-      logo: "logos/psg.png"
+      name: "Spain",
+      logo: "logos/spain.png"
     },
     awayTeam: {
-      name: "Arsenal",
-      logo: "logos/arsenal.png"
+      name: "Iraq",
+      logo: "logos/iraq.png"
+    }
+  },
+  {
+    id: 2,
+    league: "International Friendly",
+    time: "1:00 AM",
+    status: "",
+    day: "today",
+    isImportant: true,
+    servers: ["https://yallalive.sx/"],
+    homeTeam: {
+      name: "France",
+      logo: "logos/france.png"
+    },
+    awayTeam: {
+      name: "Ivory Coast",
+      logo: "logos/ivory-coast.png"
     }
   }
 ];
