@@ -1,6 +1,6 @@
 window.SITE_CONFIG = {
-  "adsEnabled": false,
-  "vignetteEnabled": false,
+  "adsEnabled": true,
+  "vignetteEnabled": true,
   "multiAdEnabled": false,
   "popUnderEnabled": false,
   "countdownEnabled": false,
