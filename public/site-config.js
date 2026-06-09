@@ -2,7 +2,7 @@ window.SITE_CONFIG = {
   "adsEnabled": true,
   "vignetteEnabled": true,
   "multiAdEnabled": true,
-  "popUnderEnabled": false,
+  "popUnderEnabled": true,
   "countdownEnabled": false,
   "countdownSeconds": 0
 };
