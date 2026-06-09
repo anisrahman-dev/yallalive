@@ -19,10 +19,10 @@ export default function GutterAds() {
 
   return (
     <>
-      <div className="hidden min-[1400px]:flex flex-col gap-4 fixed top-[170px] left-[calc(50%-680px)] z-40">
+      <div className="hidden min-[1400px]:flex flex-col gap-4 fixed top-[170px] left-[calc(50%_-_680px)] z-40">
         {column}
       </div>
-      <div className="hidden min-[1400px]:flex flex-col gap-4 fixed top-[170px] right-[calc(50%-680px)] z-40">
+      <div className="hidden min-[1400px]:flex flex-col gap-4 fixed top-[170px] right-[calc(50%_-_680px)] z-40">
         {column}
       </div>
     </>
