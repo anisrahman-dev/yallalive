@@ -1,4 +1,5 @@
 import { DEFAULT_SITE_CONFIG } from './adminConstants.js'
+import { parseTvChannels, normalizeChannels } from './tvChannels.js'
 
 export async function sha256(text) {
   const buf = new TextEncoder().encode(text)
@@ -16,6 +17,7 @@ export function ghHeaders(cfg) {
 // app, so the GitHub paths are public/matches.js and public/site-config.js.
 export const MATCHES_PATH = 'public/matches.js'
 export const SITE_CONFIG_PATH = 'public/site-config.js'
+export const TV_CHANNELS_PATH = 'public/tv-channels.js'
 
 export function ghContentsUrl(cfg, path = MATCHES_PATH) {
   return `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`
@@ -90,6 +92,17 @@ export async function fetchSiteConfigFromGitHub(cfg) {
   const data = await res.json()
   const content = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))))
   return { config: parseSiteConfig(content), sha: data.sha }
+}
+
+export async function fetchTvChannelsFromGitHub(cfg) {
+  if (!cfg.owner || !cfg.repo) throw new Error('Owner/repo required')
+  const url = `${ghContentsUrl(cfg, TV_CHANNELS_PATH)}?ref=${encodeURIComponent(cfg.branch)}`
+  const res = await fetch(url, { headers: ghHeaders(cfg), cache: 'no-store' })
+  if (res.status === 404) return { channels: normalizeChannels([]), sha: null }
+  if (!res.ok) throw new Error(`GitHub fetch failed: ${res.status}`)
+  const data = await res.json()
+  const content = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))))
+  return { channels: parseTvChannels(content), sha: data.sha }
 }
 
 export async function publishFile(cfg, path, content, message) {

@@ -6,6 +6,8 @@ import Contact from './pages/Contact.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Terms from './pages/Terms.jsx'
 import Blog from './pages/Blog.jsx'
+import Tv from './pages/Tv.jsx'
+import TvChannel from './pages/TvChannel.jsx'
 import WorldCupFormatExplained from './pages/articles/WorldCupFormatExplained.jsx'
 import WorldCup2026 from './pages/articles/WorldCup2026.jsx'
 import FifaWorldCupHistory from './pages/articles/FifaWorldCupHistory.jsx'
@@ -45,6 +47,13 @@ export default function App() {
         <Route path="/terms.html" element={<Terms />} />
 
         <Route path="/blog.html" element={<Blog />} />
+
+        <Route path="/tv.html" element={<Tv />} />
+        <Route path="/tv-1.html" element={<TvChannel number={1} />} />
+        <Route path="/tv-2.html" element={<TvChannel number={2} />} />
+        <Route path="/tv-3.html" element={<TvChannel number={3} />} />
+        <Route path="/tv-4.html" element={<TvChannel number={4} />} />
+        <Route path="/tv-5.html" element={<TvChannel number={5} />} />
 
         <Route path="/world-cup-format-explained.html" element={<WorldCupFormatExplained />} />
         <Route path="/world-cup-2026.html" element={<WorldCup2026 />} />

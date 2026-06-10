@@ -6,9 +6,11 @@ import {
 } from '../lib/adminConstants.js'
 import {
   sha256, parseMatchesJs, serializeMatchesJs, serializeSiteConfig,
-  fetchMatchesFromGitHub, fetchSiteConfigFromGitHub, publishFile, testConnection as testConn,
-  MATCHES_PATH, SITE_CONFIG_PATH
+  fetchMatchesFromGitHub, fetchSiteConfigFromGitHub, fetchTvChannelsFromGitHub,
+  publishFile, testConnection as testConn,
+  MATCHES_PATH, SITE_CONFIG_PATH, TV_CHANNELS_PATH
 } from '../lib/adminGithub.js'
+import { serializeTvChannels, normalizeChannels, parseTvChannels } from '../lib/tvChannels.js'
 
 function useToast() {
   const [toast, setToast] = useState({ msg: '', kind: 'ok', visible: false })
@@ -85,19 +87,21 @@ function AdminUI({ onLogout }) {
   const [settings, setSettings] = useState(loadSettings)
   const [matches, setMatches] = useState([])
   const [siteConfig, setSiteConfig] = useState({ ...DEFAULT_SITE_CONFIG })
+  const [tvChannels, setTvChannels] = useState(() => normalizeChannels([]))
   const [dirty, setDirty] = useState(false)
   const [siteConfigDirty, setSiteConfigDirty] = useState(false)
+  const [tvDirty, setTvDirty] = useState(false)
   const [connStatus, setConnStatus] = useState({ text: '', cls: 'text-slate-500' })
   const [publishing, setPublishing] = useState(false)
 
   // beforeunload guard
   useEffect(() => {
     const beforeUnload = (e) => {
-      if (dirty || siteConfigDirty) { e.preventDefault(); e.returnValue = '' }
+      if (dirty || siteConfigDirty || tvDirty) { e.preventDefault(); e.returnValue = '' }
     }
     window.addEventListener('beforeunload', beforeUnload)
     return () => window.removeEventListener('beforeunload', beforeUnload)
-  }, [dirty, siteConfigDirty])
+  }, [dirty, siteConfigDirty, tvDirty])
 
   // Persist matches draft to localStorage when dirty
   useEffect(() => {
@@ -124,6 +128,20 @@ function AdminUI({ onLogout }) {
               const parsed = new Function('return ' + m[1])()
               if (!cancelled) setSiteConfig({ ...DEFAULT_SITE_CONFIG, ...parsed })
             }
+          }
+        } catch (_) { /* keep default */ }
+      }
+
+      // TV channels: try GitHub, fall back to local file
+      try {
+        const { channels } = await fetchTvChannelsFromGitHub(settings)
+        if (!cancelled) setTvChannels(channels)
+      } catch (_) {
+        try {
+          const r = await fetch('/tv-channels.js', { cache: 'no-store' })
+          if (r.ok) {
+            const text = await r.text()
+            if (!cancelled) setTvChannels(parseTvChannels(text))
           }
         } catch (_) { /* keep default */ }
       }
@@ -184,16 +202,19 @@ function AdminUI({ onLogout }) {
   }
 
   const handleReload = async () => {
-    if ((dirty || siteConfigDirty) && !confirm('Discard unsaved changes and reload from GitHub?')) return
+    if ((dirty || siteConfigDirty || tvDirty) && !confirm('Discard unsaved changes and reload from GitHub?')) return
     try {
-      const [{ matches: m }, { config: sc }] = await Promise.all([
+      const [{ matches: m }, { config: sc }, { channels: tv }] = await Promise.all([
         fetchMatchesFromGitHub(settings),
-        fetchSiteConfigFromGitHub(settings)
+        fetchSiteConfigFromGitHub(settings),
+        fetchTvChannelsFromGitHub(settings)
       ])
       setMatches(m)
       setSiteConfig(sc)
+      setTvChannels(tv)
       setDirty(false)
       setSiteConfigDirty(false)
+      setTvDirty(false)
       show('Reloaded from GitHub')
     } catch (e) {
       show(e.message, 'err')
@@ -217,7 +238,7 @@ function AdminUI({ onLogout }) {
     const cfg = saveSettings()
     if (!cfg.token) { show('Add a GitHub token first', 'warn'); return }
     if (dirty && !validateMatches()) return
-    if (!dirty && !siteConfigDirty) { show('Nothing to publish', 'warn'); return }
+    if (!dirty && !siteConfigDirty && !tvDirty) { show('Nothing to publish', 'warn'); return }
 
     setPublishing(true)
     try {
@@ -239,6 +260,16 @@ function AdminUI({ onLogout }) {
         )
         setSiteConfigDirty(false)
         published.push('site config')
+      }
+      if (tvDirty) {
+        const liveCount = tvChannels.reduce((n, c) => n + c.servers.filter(Boolean).length, 0)
+        await publishFile(
+          cfg, TV_CHANNELS_PATH,
+          serializeTvChannels(tvChannels),
+          `chore(tv): channel servers updated (${liveCount} server links)`
+        )
+        setTvDirty(false)
+        published.push('TV channels')
       }
       show('Published: ' + published.join(' + '))
     } catch (e) {
@@ -299,7 +330,7 @@ function AdminUI({ onLogout }) {
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#ee335f]">Admin</span>
           </div>
           <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
-            {(dirty || siteConfigDirty) && (
+            {(dirty || siteConfigDirty || tvDirty) && (
               <span className="text-[10px] font-bold uppercase tracking-wider text-[#fac912]" title="Unsaved changes">●<span className="hidden sm:inline ml-1">Unsaved</span></span>
             )}
             <button onClick={handleReload} className="text-xs font-bold uppercase tracking-wider px-2.5 sm:px-3 py-2 rounded-xl bg-slate-700/60 hover:bg-slate-700 transition flex items-center gap-1.5" title="Reload from GitHub">
@@ -362,6 +393,23 @@ function AdminUI({ onLogout }) {
         <SiteSettings
           config={siteConfig}
           onChange={(patch) => { setSiteConfig((c) => ({ ...c, ...patch })); setSiteConfigDirty(true) }}
+        />
+
+        <TvChannelsEditor
+          channels={tvChannels}
+          onChange={(idx, patch) => {
+            setTvChannels((arr) => arr.map((c, i) => (i === idx ? { ...c, ...patch } : c)))
+            setTvDirty(true)
+          }}
+          onSetServer={(idx, sIdx, val) => {
+            setTvChannels((arr) => arr.map((c, i) => {
+              if (i !== idx) return c
+              const servers = c.servers.slice()
+              servers[sIdx] = val
+              return { ...c, servers }
+            }))
+            setTvDirty(true)
+          }}
         />
 
         <div className="flex items-center justify-between gap-3">
@@ -439,6 +487,67 @@ function SiteSettings({ config, onChange }) {
           />
         </div>
       </div>
+    </div>
+  )
+}
+
+function TvChannelsEditor({ channels, onChange, onSetServer }) {
+  return (
+    <div className="bg-[#1e293b] border border-slate-700/50 rounded-2xl p-4 sm:p-5">
+      <div className="flex items-center justify-between gap-3 mb-3 sm:mb-4">
+        <h2 className="text-sm font-extrabold uppercase tracking-widest text-slate-300 flex items-center gap-2">
+          <span className="material-symbols-outlined text-base">live_tv</span>
+          TV Channels
+        </h2>
+        <span className="text-[10px] text-slate-500">Each page = 1 player, up to 3 m3u8 servers</span>
+      </div>
+      <div className="space-y-4">
+        {channels.map((c, idx) => (
+          <div key={c.id} className="bg-slate-900/40 border border-slate-700/50 rounded-xl p-3 sm:p-4">
+            <div className="flex items-center justify-between gap-3 mb-3">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#fac912]">
+                /tv-{c.id}.html
+              </span>
+              <a
+                href={`/tv-${c.id}.html`}
+                target="_blank"
+                rel="noreferrer"
+                className="text-[10px] font-bold uppercase tracking-wider text-slate-400 hover:text-white flex items-center gap-1"
+              >
+                <span className="material-symbols-outlined text-sm">open_in_new</span>
+                Open
+              </a>
+            </div>
+            <div className="mb-3">
+              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Title</label>
+              <input
+                type="text"
+                value={c.title ?? ''}
+                onChange={(e) => onChange(idx, { title: e.target.value })}
+                placeholder={`TV ${c.id}`}
+                className="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 text-sm"
+              />
+            </div>
+            <div className="space-y-2">
+              {[0, 1, 2].map((sIdx) => (
+                <div key={sIdx} className="flex gap-2 items-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 w-16 flex-shrink-0 text-right pr-1">Server {sIdx + 1}</span>
+                  <input
+                    type="url"
+                    value={c.servers[sIdx] ?? ''}
+                    onChange={(e) => onSetServer(idx, sIdx, e.target.value)}
+                    placeholder="https://example.com/stream.m3u8"
+                    className="flex-1 bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 text-sm"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <p className="text-[11px] text-slate-500 mt-3">
+        Paste an <code>.m3u8</code> link into any server slot, then <strong className="text-slate-300">Publish</strong>. Leave a slot blank to hide that server button.
+      </p>
     </div>
   )
 }

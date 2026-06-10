@@ -13,6 +13,14 @@ export default function Header({ withWcBar = false }) {
           <img src="/logos/logo-unified.png" alt="Yalla Live" className="h-[70px] md:h-[72px] w-auto object-contain" />
         </Link>
         <div className="flex items-center gap-2">
+          <Link
+            to="/tv.html"
+            className="flex items-center gap-1.5 rounded-full bg-[#ee335f] px-3 md:px-4 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-sm hover:bg-[#ee335f]/90 transition-colors"
+            aria-label="Live TV"
+          >
+            <span className="material-symbols-outlined text-base">live_tv</span>
+            <span className="hidden sm:inline">Live TV</span>
+          </Link>
           <button
             id="theme-toggle"
             className="header-icon-btn btn-theme"
