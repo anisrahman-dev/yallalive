@@ -2,7 +2,7 @@ window.TV_CHANNELS = [
   {
     id: 1,
     title: "TV 1",
-    servers: ["", "", ""]
+    servers: ["http://l2.cloudskep.com/ant1cm2/abr/playlist.m3u8", "", ""]
   },
   {
     id: 2,
