@@ -203,4 +203,4 @@ export const TIME_SLOTS = (() => {
 export const PASSWORD_HASH = '890402d71a925bd877402ecdfce149925b522b0177dad8a51221b7dbd3e6bc0e'
 export const DEFAULTS = { owner: 'anisrahman-dev', repo: 'yallalive', branch: 'main', token: '' }
 export const STORAGE = { auth: 'yalla.admin.auth', gh: 'yalla.admin.gh', draft: 'yalla.admin.draft' }
-export const DEFAULT_SITE_CONFIG = { adsEnabled: false, vignetteEnabled: false, multiAdEnabled: false, popUnderEnabled: false, countdownEnabled: true, countdownSeconds: 10 }
+export const DEFAULT_SITE_CONFIG = { adsEnabled: false, vignetteEnabled: false, multiAdEnabled: false, popUnderEnabled: false, networkTagsEnabled: false, tvBannerAdsEnabled: false, tvNativeAdEnabled: false, countdownEnabled: true, countdownSeconds: 10 }

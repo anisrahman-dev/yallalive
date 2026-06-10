@@ -14,6 +14,7 @@ import FifaWorldCupHistory from './pages/articles/FifaWorldCupHistory.jsx'
 import WorldCupTopScorers from './pages/articles/WorldCupTopScorers.jsx'
 import HowToWatchFootballMena from './pages/articles/HowToWatchFootballMena.jsx'
 import HowToWatchPremierLeagueFree from './pages/articles/HowToWatchPremierLeagueFree.jsx'
+import NetworkAds from './components/NetworkAds.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -35,6 +36,7 @@ export default function App() {
     <>
       <ScrollToTop />
       <CanonicalUpdater />
+      <NetworkAds />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/index.html" element={<Home />} />

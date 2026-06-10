@@ -3,6 +3,9 @@ window.SITE_CONFIG = {
   "vignetteEnabled": true,
   "multiAdEnabled": true,
   "popUnderEnabled": true,
+  "networkTagsEnabled": true,
+  "tvBannerAdsEnabled": true,
+  "tvNativeAdEnabled": true,
   "countdownEnabled": false,
   "countdownSeconds": 0
 };

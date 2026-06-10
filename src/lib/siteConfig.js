@@ -5,6 +5,9 @@ const DEFAULT = {
   vignetteEnabled: false,
   multiAdEnabled: false,
   popUnderEnabled: false,
+  networkTagsEnabled: false,
+  tvBannerAdsEnabled: false,
+  tvNativeAdEnabled: false,
   countdownEnabled: true,
   countdownSeconds: 10
 }

@@ -5,6 +5,7 @@ import HlsPlayer from '../components/HlsPlayer.jsx'
 import GutterAds from '../components/GutterAds.jsx'
 import IframeAd from '../components/IframeAd.jsx'
 import { loadTvChannels, blankChannel } from '../lib/tvChannels.js'
+import { getSiteConfig } from '../lib/siteConfig.js'
 
 // 728x90 leaderboard (Adsterra) — desktop
 const AD_LEADERBOARD = `
@@ -42,6 +43,7 @@ export default function TvChannel({ number }) {
   }, [number])
 
   const title = channel.title || `TV ${number}`
+  const cfg = getSiteConfig()
 
   return (
     <Layout>
@@ -61,32 +63,40 @@ export default function TvChannel({ number }) {
           <h1 className="green-sub-bar shadow-sm block m-0">{title} — Live Stream</h1>
         </div>
 
-        {/* Top banner — 728x90 leaderboard (desktop) */}
-        <div className="hidden sm:flex justify-center mb-5">
-          <IframeAd html={AD_LEADERBOARD} width={728} height={90} />
-        </div>
-
-        {/* Top banner — 320x50 (mobile) */}
-        <div className="flex sm:hidden justify-center mb-5">
-          <IframeAd html={AD_MOBILE_BANNER} width={320} height={50} />
-        </div>
+        {cfg.tvBannerAdsEnabled && (
+          <>
+            {/* Top banner — 728x90 leaderboard (desktop) */}
+            <div className="hidden sm:flex justify-center mb-5">
+              <IframeAd html={AD_LEADERBOARD} width={728} height={90} />
+            </div>
+            {/* Top banner — 320x50 (mobile) */}
+            <div className="flex sm:hidden justify-center mb-5">
+              <IframeAd html={AD_MOBILE_BANNER} width={320} height={50} />
+            </div>
+          </>
+        )}
 
         <HlsPlayer servers={channel.servers} title={title} />
 
-        {/* 728x90 leaderboard — desktop only (too wide for phones) */}
-        <div className="hidden sm:flex justify-center mt-6">
-          <IframeAd html={AD_LEADERBOARD} width={728} height={90} />
-        </div>
-
-        {/* 320x50 banner — mobile only */}
-        <div className="flex sm:hidden justify-center mt-6">
-          <IframeAd html={AD_MOBILE_BANNER} width={320} height={50} />
-        </div>
+        {cfg.tvBannerAdsEnabled && (
+          <>
+            {/* 728x90 leaderboard — desktop only (too wide for phones) */}
+            <div className="hidden sm:flex justify-center mt-6">
+              <IframeAd html={AD_LEADERBOARD} width={728} height={90} />
+            </div>
+            {/* 320x50 banner — mobile only */}
+            <div className="flex sm:hidden justify-center mt-6">
+              <IframeAd html={AD_MOBILE_BANNER} width={320} height={50} />
+            </div>
+          </>
+        )}
 
         {/* Native banner — all screens */}
-        <div className="flex justify-center mt-6">
-          <IframeAd html={AD_NATIVE} width={728} height={300} responsive />
-        </div>
+        {cfg.tvNativeAdEnabled && (
+          <div className="flex justify-center mt-6">
+            <IframeAd html={AD_NATIVE} width={728} height={300} responsive />
+          </div>
+        )}
       </main>
     </Layout>
   )

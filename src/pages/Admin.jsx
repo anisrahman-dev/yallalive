@@ -464,13 +464,19 @@ function SiteSettings({ config, onChange }) {
     <div className="bg-[#1e293b] border border-slate-700/50 rounded-2xl p-4 sm:p-5">
       <h2 className="text-sm font-extrabold uppercase tracking-widest text-slate-300 mb-3 sm:mb-4">Site Settings</h2>
       <div className="divide-y divide-slate-700/50">
-        <Toggle label="Sidebar & banner ads" hint="Gutter skyscrapers + bottom match-section banner."
+        <Toggle label="Sidebar gutter ads" hint="TV-page skyscraper ads in the left/right gutters (desktop ≥1400px only)."
           checked={!!config.adsEnabled} onChange={(v) => onChange({ adsEnabled: v })} />
+        <Toggle label="TV banner ads" hint="Leaderboard (728×90 desktop) / banner (320×50 mobile) above & below the TV player."
+          checked={!!config.tvBannerAdsEnabled} onChange={(v) => onChange({ tvBannerAdsEnabled: v })} />
+        <Toggle label="TV native ad" hint="Native banner below the TV player (effectiveCPM zone 53ad7220…)."
+          checked={!!config.tvNativeAdEnabled} onChange={(v) => onChange({ tvNativeAdEnabled: v })} />
+        <Toggle label="Background network tags" hint="Site-wide effectiveCPM + nap5k tags on every page (push/pop/interstitial)."
+          checked={!!config.networkTagsEnabled} onChange={(v) => onChange({ networkTagsEnabled: v })} />
         <Toggle label="Vignette" hint="Full-page interstitial ad (Monetag zone 11036330)."
           checked={!!config.vignetteEnabled} onChange={(v) => onChange({ vignetteEnabled: v })} />
-        <Toggle label="Multi ad" hint="Auto-format multi-ad tag (zone 241500)."
+        <Toggle label="Multi ad" hint="Auto-format multi-ad tag (zone 241500). NOTE: not wired up yet."
           checked={!!config.multiAdEnabled} onChange={(v) => onChange({ multiAdEnabled: v })} />
-        <Toggle label="Pop Under" hint="Background pop-under tag (zone 11036346)."
+        <Toggle label="Pop Under" hint="Background pop-under tag (zone 11036346). NOTE: not wired up yet."
           checked={!!config.popUnderEnabled} onChange={(v) => onChange({ popUnderEnabled: v })} />
         <Toggle label="Countdown popup" hint="When off, clicking a match opens the stream directly (no popup, no ad slot)."
           checked={config.countdownEnabled !== false} onChange={(v) => onChange({ countdownEnabled: v })} />
