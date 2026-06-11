@@ -2,7 +2,7 @@ window.TV_CHANNELS = [
   {
     id: 1,
     title: "TV 1",
-    servers: ["https://cnbc-live.akamaized.net/cnbc/master.m3u8", "https://test-streams.mux.dev/test_001/stream.m3u8", "https://test-streams.mux.dev/test_001/stream.m3u8"]
+    servers: ["https://serspurgg.cachefly.net/bri/strr.stream/playlist.m3u8", "https://reemleg.cachefly.net/lall/score.stream/playlist.m3u8", "https://test-streams.mux.dev/test_001/stream.m3u8"]
   },
   {
     id: 2,
