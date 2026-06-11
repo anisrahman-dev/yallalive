@@ -6,7 +6,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
+    servers: ["https://www.score808live.tv/score808-live-football-stats-team-performance-rankings-match-insights/"],
     homeTeam: {
       name: "Mexico",
       logo: "logos/mexico.png"
