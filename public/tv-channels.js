@@ -7,7 +7,7 @@ window.TV_CHANNELS = [
   {
     id: 2,
     title: "TV 2",
-    servers: ["", "", ""]
+    servers: ["https://cnbc-live.akamaized.net/cnbc/master.m3u8", "https://cnbc-live.akamaized.net/cnbc/master.m3u8", "https://cnbc-live.akamaized.net/cnbc/master.m3u8"]
   },
   {
     id: 3,
