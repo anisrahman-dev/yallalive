@@ -1,11 +1,11 @@
 window.SITE_CONFIG = {
-  "adsEnabled": true,
+  "adsEnabled": false,
   "vignetteEnabled": true,
-  "multiAdEnabled": true,
-  "popUnderEnabled": true,
-  "networkTagsEnabled": true,
-  "tvBannerAdsEnabled": true,
-  "tvNativeAdEnabled": true,
+  "multiAdEnabled": false,
+  "popUnderEnabled": false,
+  "networkTagsEnabled": false,
+  "tvBannerAdsEnabled": false,
+  "tvNativeAdEnabled": false,
   "countdownEnabled": false,
   "countdownSeconds": 0
 };
