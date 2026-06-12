@@ -4,7 +4,7 @@ const MATCHES_DATA = [
     league: "FIFA World Cup 2026",
     time: "1:00 AM",
     status: "",
-    day: "tomorrow",
+    day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
@@ -21,7 +21,7 @@ const MATCHES_DATA = [
     league: "FIFA World Cup 2026",
     time: "7:00 AM",
     status: "",
-    day: "tomorrow",
+    day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-2.html"],
     homeTeam: {
