@@ -9,5 +9,10 @@
   ],
   "rewrites": [
     { "source": "/((?!api/|assets/|logos/|.*\\.(?:js|css|png|jpg|jpeg|svg|ico|xml|txt|webp|woff|woff2|ttf)$).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    { "source": "/tv.html", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] },
+    { "source": "/admin-anis.html", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] },
+    { "source": "/matches-board-anis.html", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] }
   ]
 }

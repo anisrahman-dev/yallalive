@@ -2,6 +2,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Home from './pages/Home.jsx'
 import Admin from './pages/Admin.jsx'
+import MatchesBoard from './pages/MatchesBoard.jsx'
 import Contact from './pages/Contact.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Terms from './pages/Terms.jsx'
@@ -43,6 +44,7 @@ export default function App() {
         <Route path="/home.html" element={<Navigate to="/" replace />} />
 
         <Route path="/admin-anis.html" element={<Admin />} />
+        <Route path="/matches-board-anis.html" element={<MatchesBoard />} />
 
         <Route path="/contact.html" element={<Contact />} />
         <Route path="/privacy.html" element={<Privacy />} />

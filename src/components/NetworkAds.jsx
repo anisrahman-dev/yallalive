@@ -9,8 +9,9 @@ import { getSiteConfig } from '../lib/siteConfig.js'
  */
 export default function NetworkAds() {
   useEffect(() => {
-    // Never inject network ad tags on the admin panel.
-    if (window.location.pathname.startsWith('/admin-anis')) return
+    // Never inject network ad tags on internal/ad-free pages.
+    const p = window.location.pathname
+    if (p.startsWith('/admin-anis') || p.startsWith('/matches-board-anis') || p === '/tv.html') return
     if (!getSiteConfig().networkTagsEnabled) return
 
     if (!document.getElementById('net-ad-effectivecpm')) {
