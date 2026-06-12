@@ -138,6 +138,9 @@ async function visitorNeedsConsent() {
 }
 
 (async function init() {
+  // Never track the internal admin page.
+  if (window.location.pathname === '/admin-anis.html') return;
+
   const decision = localStorage.getItem(CONSENT_KEY);
   if (decision === 'accepted') return loadFirebaseAnalytics();
   if (decision === 'declined') return;
