@@ -4,33 +4,33 @@ const MATCHES_DATA = [
     league: "FIFA World Cup 2026",
     time: "1:00 AM",
     status: "",
-    day: "today",
+    day: "tomorrow",
     isImportant: true,
-    servers: ["https://www.score808live.tv/score808-live-football-stats-team-performance-rankings-match-insights/"],
+    servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Mexico",
-      logo: "logos/mexico.png"
+      name: "Canada",
+      logo: "logos/canada.png"
     },
     awayTeam: {
-      name: "South Africa",
-      logo: "logos/south-africa.png"
+      name: "Bolivia",
+      logo: "logos/bolivia.png"
     }
   },
   {
     id: 2,
     league: "FIFA World Cup 2026",
-    time: "8:00 AM",
+    time: "7:00 AM",
     status: "",
-    day: "today",
+    day: "tomorrow",
     isImportant: true,
-    servers: ["https://www.score808live.tv/"],
+    servers: ["https://www.yallalivefootball.com/tv-2.html"],
     homeTeam: {
-      name: "South Korea",
-      logo: "logos/south-korea.png"
+      name: "USA",
+      logo: "logos/usa.png"
     },
     awayTeam: {
-      name: "Czech Republic",
-      logo: "logos/czech-republic.png"
+      name: "Paraguay",
+      logo: "logos/paraguay.png"
     }
   }
 ];
