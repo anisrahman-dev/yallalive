@@ -45,14 +45,14 @@ export default function MatchesBoard() {
   const countdownSeconds = Math.max(0, Number(config.countdownSeconds) || 10)
 
   return (
-    <Layout>
+    <Layout bare>
       <PageMeta
         title="Matches Board"
         description="Internal matches board."
         robots="noindex, nofollow"
       />
 
-      <main className="pt-[100px] md:pt-[96px] pb-6 md:pb-16 max-w-[1000px] mx-auto min-h-screen px-4">
+      <main className="pt-6 md:pt-8 pb-6 md:pb-16 max-w-[1000px] mx-auto min-h-screen px-4">
         <div className="main-wrapper">
           <div className="flex justify-center items-center mb-6 pb-4 border-b border-gray-200 dark:border-gray-700">
             <div
