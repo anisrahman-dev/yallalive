@@ -14,7 +14,7 @@ export default function GutterAds() {
   const column = (
     <>
       <AdUnit adKey="ec2e4b0a2aa3fcac5cb428225d0ad9a1" width={160} height={600} showLabel={false} />
-      <AdUnit adKey="8ced268570265d4115e638aba1f41b14" width={160} height={300} showLabel={false} />
+      <AdUnit adKey="ec2e4b0a2aa3fcac5cb428225d0ad9a1" width={160} height={600} showLabel={false} />
     </>
   )
 
