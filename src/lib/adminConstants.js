@@ -80,7 +80,7 @@ const WORLD_CUP_2026_TEAMS = [
   'Argentina', 'Brazil', 'Uruguay', 'Colombia', 'Ecuador', 'Paraguay',
   'Morocco', 'Senegal', 'Tunisia', 'Algeria', 'Egypt', 'Cameroon', 'Nigeria', 'Ivory Coast', 'Ghana', 'South Africa',
   'Japan', 'South Korea', 'Iran', 'Saudi Arabia', 'Australia', 'Iraq', 'United Arab Emirates', 'Qatar',
-  'Costa Rica', 'Panama', 'Jamaica',
+  'Costa Rica', 'Panama', 'Jamaica', 'Curacao',
   'New Zealand',
   'Bolivia', 'DR Congo'
 ]
@@ -131,7 +131,7 @@ export const TEAM_LOGOS = {
   'Japan': 'logos/japan.png', 'South Korea': 'logos/south-korea.png',
   'Iran': 'logos/iran.png', 'Saudi Arabia': 'logos/saudi-arabia.png', 'Australia': 'logos/australia.png',
   'Iraq': 'logos/iraq.png', 'United Arab Emirates': 'logos/uae.png', 'Qatar': 'logos/qatar.png',
-  'Costa Rica': 'logos/costa-rica.png', 'Panama': 'logos/panama.png', 'Jamaica': 'logos/jamaica.png',
+  'Costa Rica': 'logos/costa-rica.png', 'Panama': 'logos/panama.png', 'Jamaica': 'logos/jamaica.png', 'Curacao': 'logos/curacao.png',
   'New Zealand': 'logos/new-zealand.png', 'Bolivia': 'logos/bolivia.png', 'DR Congo': 'logos/dr-congo.png',
   'Arsenal': 'logos/arsenal.png', 'Aston Villa': 'logos/aston-villa.png',
   'Bournemouth': 'logos/bournemouth.png', 'Brentford': 'logos/brentford.png',
