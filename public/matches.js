@@ -6,7 +6,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://sportcxh.site/matches/germany-vs-curacao/"],
+    servers: ["https://yallalive.sx/"],
     homeTeam: {
       name: "Germany",
       logo: "logos/germany.png"
@@ -23,7 +23,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
+    servers: ["https://yallalive.sx/"],
     homeTeam: {
       name: "Netherlands",
       logo: "logos/netherlands.png"
@@ -40,7 +40,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
+    servers: ["https://yallalive.sx/"],
     homeTeam: {
       name: "Ivory Coast",
       logo: "logos/ivory-coast.png"
@@ -57,7 +57,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
+    servers: ["https://yallalive.sx/"],
     homeTeam: {
       name: "Spain",
       logo: "logos/spain.png"
