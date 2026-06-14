@@ -6,7 +6,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
+    servers: ["https://sportcxh.site/matches/germany-vs-curacao/"],
     homeTeam: {
       name: "Germany",
       logo: "logos/germany.png"
