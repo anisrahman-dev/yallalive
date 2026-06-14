@@ -15,5 +15,22 @@ const MATCHES_DATA = [
       name: "Curacao",
       logo: "logos/ecuador.png"
     }
+  },
+  {
+    id: 2,
+    league: "FIFA World Cup 2026",
+    time: "",
+    status: "",
+    day: "today",
+    isImportant: true,
+    servers: ["https://t.me"],
+    homeTeam: {
+      name: "Czech Republic",
+      logo: "logos/czech-republic.png"
+    },
+    awayTeam: {
+      name: "Turkey",
+      logo: "logos/turkey.png"
+    }
   }
 ];
