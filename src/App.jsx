@@ -15,8 +15,6 @@ import WorldCupTopScorers from './pages/articles/WorldCupTopScorers.jsx'
 import HowToWatchFootballMena from './pages/articles/HowToWatchFootballMena.jsx'
 import HowToWatchPremierLeagueFree from './pages/articles/HowToWatchPremierLeagueFree.jsx'
 import NetworkAds from './components/NetworkAds.jsx'
-import LandingApp from './landing/LandingApp.jsx'
-import { getLandingConfig } from './lib/domains.js'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -34,11 +32,6 @@ function CanonicalUpdater() {
 }
 
 export default function App() {
-  // On the .site landing domains, serve the lightweight landing app instead
-  // of the full streaming site. Match data is fetched from the main .com.
-  const landingCfg = getLandingConfig()
-  if (landingCfg) return <LandingApp cfg={landingCfg} />
-
   return (
     <>
       <ScrollToTop />
