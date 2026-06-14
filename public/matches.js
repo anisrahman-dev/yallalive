@@ -6,7 +6,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://yallalivefootball.com/"],
+    servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
       name: "Germany",
       logo: "logos/germany.png"
@@ -40,7 +40,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://t.me"],
+    servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
       name: "Ivory Coast",
       logo: "logos/ivory-coast.png"
@@ -57,7 +57,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://t.me"],
+    servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
       name: "Spain",
       logo: "logos/spain.png"
