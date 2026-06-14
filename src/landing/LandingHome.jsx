@@ -96,7 +96,6 @@ export default function LandingHome({ cfg }) {
 
   return (
     <LandingLayout cfg={cfg}>
-      <LandingGutterAds adKey={cfg.skyscraperAdKey} />
       <PageMeta
         title={`${cfg.brand} | ${cfg.headline}`}
         description={cfg.subhead}
@@ -111,6 +110,12 @@ export default function LandingHome({ cfg }) {
         twitterDescription={cfg.subhead}
         googleVerification={cfg.googleVerification}
       />
+
+      {/* Content wrapper — relative anchor for the gutter ads. min-height on
+          ultra-wide screens guarantees the wrapper is taller than the ad stack
+          so the footer (rendered outside it) never overlaps the skyscrapers. */}
+      <div className="relative min-[1740px]:min-h-[1290px]">
+      <LandingGutterAds adKey={cfg.skyscraperAdKey} />
 
       {/* Hero */}
       <section
@@ -178,6 +183,7 @@ export default function LandingHome({ cfg }) {
           ))}
         </div>
       </section>
+      </div>
 
       <RedirectModal
         open={!!openServers}

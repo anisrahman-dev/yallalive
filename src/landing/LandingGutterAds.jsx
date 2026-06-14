@@ -25,12 +25,14 @@ export default function LandingGutterAds({ adKey }) {
     </div>
   )
 
+  // Positioned relative to the content wrapper in LandingHome (not the body),
+  // so the footer — which sits outside that wrapper — can never be overlapped.
   return (
     <>
-      <div className="hidden min-[1740px]:block absolute top-[170px] left-[calc(50%_-_840px)] z-40">
+      <div className="hidden min-[1740px]:block absolute top-8 left-[calc(50%_-_840px)] z-10">
         {grid}
       </div>
-      <div className="hidden min-[1740px]:block absolute top-[170px] right-[calc(50%_-_840px)] z-40">
+      <div className="hidden min-[1740px]:block absolute top-8 right-[calc(50%_-_840px)] z-10">
         {grid}
       </div>
     </>
