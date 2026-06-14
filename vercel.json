@@ -12,6 +12,7 @@
     { "source": "/((?!api/|assets/|logos/|.*\\.(?:js|css|png|jpg|jpeg|svg|ico|xml|txt|webp|woff|woff2|ttf)$).*)", "destination": "/index.html" }
   ],
   "headers": [
+    { "source": "/matches.js", "headers": [ { "key": "Access-Control-Allow-Origin", "value": "*" } ] },
     { "source": "/admin-anis.html", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] },
     { "source": "/matches-board-anis.html", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] },
     { "source": "/tv-:num(\\d+)-app.html", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] }
