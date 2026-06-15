@@ -2,7 +2,7 @@ window.TV_CHANNELS = [
   {
     id: 1,
     title: "TV 1",
-    servers: ["", "", ""]
+    servers: ["https://tfwr3gwh1hcjigezdncb3fa5d1mmeqfsg17uff3hsnhuqcp1ghmucpf5gk.100ycdn.com/hqlive.yarncdn.live/live/hqtv_blv_phanma/playlist.m3u8?wsSession=8fc7e6fdec80770679655623-178153855459508&wsIPSercert=f7884ab7e197b7a0915eef641dd1876d&wsBindIP=2&wsserid=1168262304208899748", "https://tfwr3gwh1hcjigezdncb3fa5d1mmeqfsg17uff3hsnhuqcp1ghmucpf5gk.100ycdn.com/hqlive.yarncdn.live/live/hqtv_blv_phanma/playlist.m3u8?wsSession=8fc7e6fdec80770679655623-178153855459508&wsIPSercert=f7884ab7e197b7a0915eef641dd1876d&wsBindIP=2&wsserid=1168262304208899748", "https://tfwr3gwh1hcjigezdncb3fa5d1mmeqfsg17uff3hsnhuqcp1ghmucpf5gk.100ycdn.com/hqlive.yarncdn.live/live/hqtv_blv_phanma/playlist.m3u8?wsSession=8fc7e6fdec80770679655623-178153855459508&wsIPSercert=f7884ab7e197b7a0915eef641dd1876d&wsBindIP=2&wsserid=1168262304208899748"]
   },
   {
     id: 2,
