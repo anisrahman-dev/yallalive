@@ -12,8 +12,8 @@ const MATCHES_DATA = [
       logo: "logos/spain.png"
     },
     awayTeam: {
-      name: "Cape Verde",
-      logo: "logos/cameroon.svg"
+      name: "Serbia",
+      logo: "logos/serbia.png"
     }
   }
 ];
