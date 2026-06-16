@@ -5,7 +5,7 @@ const MATCHES_DATA = [
     time: "1:00 AM",
     status: "",
     day: "today",
-    isImportant: false,
+    isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
       name: "France",
