@@ -2,69 +2,69 @@ const MATCHES_DATA = [
   {
     id: 1,
     league: "FIFA World Cup 2026",
-    time: "11:00 PM",
+    time: "10:00 PM",
     status: "",
     day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Portugal",
-      logo: "logos/portugal.png"
+      name: "Czech Republic",
+      logo: "logos/czech-republic.png"
     },
     awayTeam: {
-      name: "DR Congo",
-      logo: "logos/dr-congo.png"
+      name: "South Africa",
+      logo: "logos/south-africa.png"
     }
   },
   {
     id: 2,
     league: "FIFA World Cup 2026",
-    time: "2:00 AM",
+    time: "1:00 AM",
     status: "",
     day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "England",
-      logo: "logos/england.png"
+      name: "Switzerland",
+      logo: "logos/switzerland.png"
     },
     awayTeam: {
-      name: "Croatia",
-      logo: "logos/croatia.png"
+      name: "Bosnia and Herzegovina",
+      logo: "logos/bosnia-and-herzegovina.png"
     }
   },
   {
     id: 3,
     league: "FIFA World Cup 2026",
-    time: "5:00 AM",
+    time: "4:00 AM",
     status: "",
     day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Ghana",
-      logo: "logos/ghana.png"
+      name: "Canada",
+      logo: "logos/canada.png"
     },
     awayTeam: {
-      name: "Panama",
-      logo: "logos/panama.png"
+      name: "Qatar",
+      logo: "logos/qatar.png"
     }
   },
   {
     id: 4,
     league: "FIFA World Cup 2026",
-    time: "8:00 AM",
+    time: "7:00 AM",
     status: "",
     day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Uzbekistan",
-      logo: "logos/bournemouth.svg"
+      name: "Mexico",
+      logo: "logos/mexico.png"
     },
     awayTeam: {
-      name: "Colombia",
-      logo: "logos/colombia.png"
+      name: "South Korea",
+      logo: "logos/south-korea.png"
     }
   }
 ];
