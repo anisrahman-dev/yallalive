@@ -8,12 +8,12 @@ const MATCHES_DATA = [
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "USA",
-      logo: "logos/usa.png"
+      name: "Germany",
+      logo: "logos/germany.png"
     },
     awayTeam: {
-      name: "Australia",
-      logo: "logos/australia.png"
+      name: "Ivory Coast",
+      logo: "logos/ivory-coast.png"
     }
   },
   {
@@ -25,63 +25,46 @@ const MATCHES_DATA = [
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Scotland",
-      logo: "logos/turkey.png"
+      name: "Ecuador",
+      logo: "logos/ecuador.png"
     },
     awayTeam: {
-      name: "Morocco",
-      logo: "logos/morocco.png"
+      name: "Curacao",
+      logo: "logos/curacao.png"
     }
   },
   {
     id: 3,
     league: "FIFA World Cup 2026",
-    time: "9",
+    time: "10:00 AM",
     status: "",
     day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Brazil",
-      logo: "logos/brazil.png"
+      name: "Tunisia",
+      logo: "logos/tunisia.png"
     },
     awayTeam: {
-      name: "Haiti",
-      logo: "logos/paraguay.png"
+      name: "Japan",
+      logo: "logos/japan.png"
     }
   },
   {
     id: 4,
     league: "FIFA World Cup 2026",
-    time: "9:00 AM",
+    time: "10:00 PM",
     status: "",
     day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Scotland",
-      logo: "logos/mexico.png"
+      name: "Spain",
+      logo: "logos/spain.png"
     },
     awayTeam: {
-      name: "Morocco",
-      logo: "logos/morocco.png"
-    }
-  },
-  {
-    id: 5,
-    league: "FIFA World Cup 2026",
-    time: "11:00 PM",
-    status: "",
-    day: "today",
-    isImportant: true,
-    servers: ["https://t.me"],
-    homeTeam: {
-      name: "Netherlands",
-      logo: "logos/netherlands.png"
-    },
-    awayTeam: {
-      name: "Sweden",
-      logo: "logos/cameroon.svg"
+      name: "Saudi Arabia",
+      logo: "logos/saudi-arabia.png"
     }
   }
 ];
