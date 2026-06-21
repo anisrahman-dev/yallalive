@@ -2,18 +2,18 @@ const MATCHES_DATA = [
   {
     id: 1,
     league: "FIFA World Cup 2026",
-    time: "2:00 AM",
+    time: "1:00 AM",
     status: "",
     day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Germany",
-      logo: "logos/germany.png"
+      name: "Belgium",
+      logo: "logos/belgium.png"
     },
     awayTeam: {
-      name: "Ivory Coast",
-      logo: "logos/ivory-coast.png"
+      name: "Iran",
+      logo: "logos/iran.png"
     }
   },
   {
