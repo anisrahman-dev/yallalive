@@ -2,18 +2,18 @@ const MATCHES_DATA = [
   {
     id: 1,
     league: "FIFA World Cup 2026",
-    time: "1:00 AM",
+    time: "11:00 PM",
     status: "",
     day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Belgium",
-      logo: "logos/belgium.png"
+      name: "Argentina",
+      logo: "logos/argentina.png"
     },
     awayTeam: {
-      name: "Iran",
-      logo: "logos/iran.png"
+      name: "Austria",
+      logo: "logos/austria.png"
     }
   },
   {
@@ -31,57 +31,6 @@ const MATCHES_DATA = [
     awayTeam: {
       name: "Curacao",
       logo: "logos/curacao.png"
-    }
-  },
-  {
-    id: 3,
-    league: "FIFA World Cup 2026",
-    time: "10:00 AM",
-    status: "",
-    day: "today",
-    isImportant: true,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
-    homeTeam: {
-      name: "Tunisia",
-      logo: "logos/tunisia.png"
-    },
-    awayTeam: {
-      name: "Japan",
-      logo: "logos/japan.png"
-    }
-  },
-  {
-    id: 4,
-    league: "FIFA World Cup 2026",
-    time: "10:00 PM",
-    status: "",
-    day: "today",
-    isImportant: true,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
-    homeTeam: {
-      name: "Spain",
-      logo: "logos/spain.png"
-    },
-    awayTeam: {
-      name: "Saudi Arabia",
-      logo: "logos/saudi-arabia.png"
-    }
-  },
-  {
-    id: 5,
-    league: "FIFA World Cup 2026",
-    time: "10:15 PM",
-    status: "",
-    day: "today",
-    isImportant: true,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
-    homeTeam: {
-      name: "Netherlands",
-      logo: "logos/netherlands.png"
-    },
-    awayTeam: {
-      name: "Sweden",
-      logo: "logos/cameroon.svg"
     }
   }
 ];
