@@ -8,29 +8,12 @@ const MATCHES_DATA = [
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Argentina",
-      logo: "logos/argentina.png"
+      name: "Portugal",
+      logo: "logos/portugal.png"
     },
     awayTeam: {
-      name: "Austria",
+      name: "Uzbekistan",
       logo: "logos/austria.png"
-    }
-  },
-  {
-    id: 2,
-    league: "FIFA World Cup 2026",
-    time: "4:00 AM",
-    status: "",
-    day: "today",
-    isImportant: true,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
-    homeTeam: {
-      name: "Ecuador",
-      logo: "logos/ecuador.png"
-    },
-    awayTeam: {
-      name: "Curacao",
-      logo: "logos/curacao.png"
     }
   }
 ];
