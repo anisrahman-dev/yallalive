@@ -23,7 +23,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://t.me"],
+    servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
       name: "Brazil",
       logo: "logos/brazil.png"
@@ -40,7 +40,7 @@ const MATCHES_DATA = [
     status: "",
     day: "today",
     isImportant: true,
-    servers: ["https://t.me"],
+    servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
       name: "Morocco",
       logo: "logos/morocco.png"
