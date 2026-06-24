@@ -8,12 +8,46 @@ const MATCHES_DATA = [
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Portugal",
-      logo: "logos/portugal.png"
+      name: "Switzerland",
+      logo: "logos/switzerland.png"
     },
     awayTeam: {
-      name: "Uzbekistan",
-      logo: "logos/austria.png"
+      name: "Canada",
+      logo: "logos/canada.png"
+    }
+  },
+  {
+    id: 2,
+    league: "FIFA World Cup 2026",
+    time: "4:00 AM",
+    status: "",
+    day: "today",
+    isImportant: true,
+    servers: ["https://t.me"],
+    homeTeam: {
+      name: "Brazil",
+      logo: "logos/brazil.png"
+    },
+    awayTeam: {
+      name: "Scotland",
+      logo: "logos/cameroon.svg"
+    }
+  },
+  {
+    id: 3,
+    league: "FIFA World Cup 2026",
+    time: "4:00 AM",
+    status: "",
+    day: "today",
+    isImportant: true,
+    servers: ["https://t.me"],
+    homeTeam: {
+      name: "Morocco",
+      logo: "logos/morocco.png"
+    },
+    awayTeam: {
+      name: "Haiti",
+      logo: "logos/cameroon.svg"
     }
   }
 ];
