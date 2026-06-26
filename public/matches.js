@@ -2,17 +2,17 @@ const MATCHES_DATA = [
   {
     id: 1,
     league: "FIFA World Cup 2026",
-    time: "2:00 AM",
+    time: "1:00 AM",
     status: "",
     day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Curacao",
-      logo: "logos/curacao.png"
+      name: "France",
+      logo: "logos/france.png"
     },
     awayTeam: {
-      name: "Ivory Coast",
+      name: "Norway",
       logo: "logos/ivory-coast.png"
     }
   },
@@ -22,7 +22,7 @@ const MATCHES_DATA = [
     time: "2:00 AM",
     status: "",
     day: "today",
-    isImportant: true,
+    isImportant: false,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
       name: "Ecuador",
@@ -39,7 +39,7 @@ const MATCHES_DATA = [
     time: "5:00 AM",
     status: "",
     day: "today",
-    isImportant: true,
+    isImportant: false,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
       name: "Japan",
@@ -56,7 +56,7 @@ const MATCHES_DATA = [
     time: "8:00 AM",
     status: "",
     day: "today",
-    isImportant: true,
+    isImportant: false,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
       name: "Paraguay",
@@ -73,7 +73,7 @@ const MATCHES_DATA = [
     time: "8:00 AM",
     status: "",
     day: "today",
-    isImportant: true,
+    isImportant: false,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
       name: "Turkey",
