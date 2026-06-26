@@ -2,7 +2,7 @@ window.TV_CHANNELS = [
   {
     id: 1,
     title: "TV 1",
-    servers: ["https://live13a.jynrrs.com/live/20233432.m3u8", "https://live13a.jynrrs.com/live/16697898.m3u8", "https://live13a.jynrrs.com/live/79635460.m3u8"]
+    servers: ["https://a0504dae9c72cdb02b00ddedf6df4973.livehwc4.com/pullsgp.yyzb456.top/live/stream-698168_lhd.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=eab2725445756f65abdcd6594aeef87c", "https://a0504dae9c72cdb02b00ddedf6df4973.livehwc4.com/pullsgp.yyzb456.top/live/stream-698168_lhd.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=eab2725445756f65abdcd6594aeef87c", "https://a0504dae9c72cdb02b00ddedf6df4973.livehwc4.com/pullsgp.yyzb456.top/live/stream-698168_lhd.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=eab2725445756f65abdcd6594aeef87c"]
   },
   {
     id: 2,
