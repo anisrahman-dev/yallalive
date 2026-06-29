@@ -1,87 +1,19 @@
 const MATCHES_DATA = [
   {
-    id: 1,
+    id: 5,
     league: "FIFA World Cup 2026",
-    time: "1:00 AM",
+    time: "11:00 PM",
     status: "",
     day: "today",
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "France",
-      logo: "logos/france.png"
+      name: "Brazil",
+      logo: "logos/brazil.png"
     },
     awayTeam: {
-      name: "Norway",
-      logo: "logos/ivory-coast.png"
-    }
-  },
-  {
-    id: 2,
-    league: "FIFA World Cup 2026",
-    time: "2:00 AM",
-    status: "",
-    day: "today",
-    isImportant: false,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
-    homeTeam: {
-      name: "Ecuador",
-      logo: "logos/ecuador.png"
-    },
-    awayTeam: {
-      name: "Germany",
-      logo: "logos/germany.png"
-    }
-  },
-  {
-    id: 3,
-    league: "FIFA World Cup 2026",
-    time: "5:00 AM",
-    status: "",
-    day: "today",
-    isImportant: false,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
-    homeTeam: {
       name: "Japan",
       logo: "logos/japan.png"
-    },
-    awayTeam: {
-      name: "Sweden",
-      logo: "logos/cameroon.svg"
-    }
-  },
-  {
-    id: 4,
-    league: "FIFA World Cup 2026",
-    time: "8:00 AM",
-    status: "",
-    day: "today",
-    isImportant: false,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
-    homeTeam: {
-      name: "Paraguay",
-      logo: "logos/paraguay.png"
-    },
-    awayTeam: {
-      name: "Australia",
-      logo: "logos/australia.png"
-    }
-  },
-  {
-    id: 5,
-    league: "FIFA World Cup 2026",
-    time: "8:00 AM",
-    status: "",
-    day: "today",
-    isImportant: false,
-    servers: ["https://www.yallalivefootball.com/tv-1.html"],
-    homeTeam: {
-      name: "Turkey",
-      logo: "logos/turkey.png"
-    },
-    awayTeam: {
-      name: "USA",
-      logo: "logos/usa.png"
     }
   }
 ];
