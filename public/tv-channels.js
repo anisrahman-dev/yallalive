@@ -2,7 +2,7 @@ window.TV_CHANNELS = [
   {
     id: 1,
     title: "TV 1",
-    servers: ["https://play.gzxdby.com/live/183334344568_2547627111.m3u8", "https://play.gzxdby.com/live/183334344568_2547627111.m3u8", "https://play.gzxdby.com/live/183334344568_2547627111.m3u8"]
+    servers: ["https://play.gzxdby.com/live/183334344568_2547627111.m3u8", "https://am.homom.store/braz1_720/index.m3u8", "https://play.gzxdby.com/live/183334344568_2547627111.m3u8"]
   },
   {
     id: 2,
