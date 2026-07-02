@@ -8,12 +8,12 @@ const MATCHES_DATA = [
     isImportant: true,
     servers: ["https://www.yallalivefootball.com/tv-1.html"],
     homeTeam: {
-      name: "Brazil",
-      logo: "logos/brazil.png"
+      name: "Spain",
+      logo: "logos/spain.png"
     },
     awayTeam: {
-      name: "Japan",
-      logo: "logos/japan.png"
+      name: "Austria",
+      logo: "logos/austria.png"
     }
   }
 ];
