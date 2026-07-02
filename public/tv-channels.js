@@ -2,7 +2,7 @@ window.TV_CHANNELS = [
   {
     id: 1,
     title: "TV 1",
-    servers: ["https://play.gzxdby.com/live/183334344568_2547627111.m3u8", "https://am.homom.store/braz1_720/index.m3u8", "https://play.gzxdby.com/live/183334344568_2547627555.m3u8"]
+    servers: ["https://pull.niues.live/live/stream-9912108_lhd.m3u8?auth_key=1782953603-0-0-b9dbb91b3f6c4ee0f4ee8f7fe1052ed4", "https://pull.niues.live/live/stream-9912108_lhd.m3u8?auth_key=1782953603-0-0-b9dbb91b3f6c4ee0f4ee8f7fe1052ed4", "https://pull.niues.live/live/stream-9912108_lhd.m3u8?auth_key=1782953603-0-0-b9dbb91b3f6c4ee0f4ee8f7fe1052ed4"]
   },
   {
     id: 2,
