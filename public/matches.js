@@ -8,12 +8,12 @@ const MATCHES_DATA = [
     isImportant: true,
     servers: ["https://t.me/yallaliveapp"],
     homeTeam: {
-      name: "Argentina",
-      logo: "logos/argentina.png"
+      name: "Spain",
+      logo: "logos/spain.png"
     },
     awayTeam: {
-      name: "Egypt",
-      logo: "logos/egypt.png"
+      name: "Belgium",
+      logo: "logos/belgium.png"
     }
   }
 ];
